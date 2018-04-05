@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>INTE 4931</title>
+	<link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+	<link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+	<script src="./res/js/prettify.js"></script>
+	<script src="./res/js/script.js"></script>
+</head>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<body>
+
+	<header>Activities and Intents</header>
+
+	<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+	<section id="main">
+
+		<h1>Exercise 6: Launch a system Activity</h1>
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h2>Duration</h2>
+		<p>
+			10 minutes
+		</p>
+
+
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h2>Goals</h2>
+
+		<p>
+			This lab covers how to launch an Android system Activity (i.e. an Activity installed with Android and not part of your application).
+			You will start the web browser Activity and pass in the address of the web page you would like it to display.
+			The red line in the image below indicates the part of the app you will be working on.
+		</p>
+
+		<img src="./res/images/Browser.png" />
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h2>Challenge</h2>
+		<p>
+			Use the guidelines here to work through the exercise on your own. Alternatively, you can use the step-by-step instructions given below.
+		</p>
+
+		<ol>
+			<li>Open <strong>AboutActivity.cs</strong>.</li>
+			<li>Locate the <code>OnLearnMoreClick</code> method.</li>
+			<li>Create an Intent with <code>ActionView</code> and an <code>http://</code> Data value to launch the browser.</li>
+			<li>Call <code>StartActivity</code> and pass it the Intent.</li>
+			<li>Run the app to test your work.</li>
+		</ol>
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h1>Steps</h1>
+		<p>
+			Below are the step-by-step instructions to implement the exercise.
+		</p>
+
+		<h2>
+			Launch the web browser
+		</h2>
+
+		<ol>
+			<li>
+				Open <strong>AboutActivity.cs</strong>.
+			</li>
+			
+			<li>
+				Locate the <code>OnLearnMoreClick</code> method.
+			</li>
+			
+			<li>
+				Create an Intent with an Action of <code>ActionView</code>. You can pass the symbolic constant <code>Intent.ActionView</code> to the Intent 
+				constructor or create the Intent first and then use the <code>SetAction</code> method.
+			</li>
+
+			<li>
+				Set the Data of the Intent to a web address such as <code>http://www.itinnovationtoday.com</code>.
+				The Data in an Android URI so you will need to use the <code>Android.Net.Uri.Parse</code> method to convert a string to a URI.
+				Once you have a URI, use the <code>SetData</code> method to load it into the Intent.
+				The code is shown below, hidden behind a button.
+<p>
+<a href="#" onclick="toggleBlock(this, 'Intent', 'Intent', 'Hide'); return false;" class="uiitem">Intent</a>
+<div class="wsblock" id="Intent" style="display:none;">
+<pre class="prettyprint codeblock">
+var intent = new Intent();
+intent.SetAction(Intent.ActionView);
+intent.SetData(Android.Net.Uri.Parse("http://www.itinnovationtoday.com"));
+</pre>
+</div>
+</p>
+</li>
+            <li>
+                Call <code>StartActivity</code> and pass in the Intent.
+            </li>
+
+
+<li>Open and edit the "About.axml" file located in the following folder <strong>"Resources\layout"</strong> to add a new button View/Control with the following <code>id</code>: <strong>btnViewMap</strong>, and set the <code>text</code> attribute/property set to: <strong>View our location!</strong> NOTE: You can get the geolocation for a specific location through maps.google.com
+<li>
+				Open <strong>AboutActivity.cs</strong>.
+</li>
+
+<li>
+				In the <strong><code>OnCreate</code></strong> method, wire up a click event for the new button using the pattern implemented for the <code>learnMoreButton</code> button view above.
+</li>
+<li>
+				Create an associated void method similar to that of the <strong><code>OnLearnMoreClick</code></strong> method and implement a similar code pattern so when the new button is clicked it will open up the default Google Maps App on the Android device and plot the location of Marquette University on the map.
+</li>
+<li>You can use the following as the intent's SetData Uri: <strong><code>geo:43.0384823,-87.9318297?z=16</code></strong></li>
+			</li>
+
+			<li>
+				Call <code>StartActivity</code> and pass in the Intent.
+			</li>
+			
+			<li>
+				Run the app to test your work. Navigate to the About Activity.</li>
+            <li>    Touch the "LEARN MORE" button. Verify that the web browser launches and displays the page you specified in the Data.
+			</li>
+            <li>    Touch the "VIEW OUR LOCATION" button. Verify that the Google Maps App launches and displays the the geolocation specified (for Marquette University).
+            </li>
+		</ol>
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h1>Summary</h1>
+		<p>
+			In this section, you started an Activity that was not part of your app. This is one of the core strengths of the Android platform -- it lets your app take advantage of other Activities installed on the device. This helps you because it means there is
+			less code to write to get your app ready for market. It also helps the user because they get to use their favorite Activities
+			for things like Contacts, Camera, Email, Web etc. instead of the nonstandard versions each app developer might create if they
+			built their own version.
+		</p>
+
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+
+	</section>
+
+	<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+	<footer></footer>
+
+</body>
+</html>

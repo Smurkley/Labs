@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>INTE 4931</title>
+	<link rel="stylesheet" type="text/css" href="./res/styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./res/styles/prettify.css" />
+	<link rel="stylesheet" type="text/css" href="./res/styles/styles.css">
+	<script src="./res/js/prettify.js"></script>
+	<script src="./res/js/script.js"></script>
+</head>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<body>
+
+	<header>Activities and Intents</header>
+
+	<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+	<section id="main">
+
+		<h1>Exercise 1: Explore the completed lab exercise</h1>
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h2>Duration</h2>
+		<p>
+			5 minutes
+		</p>
+
+
+
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+		<h2>Goals</h2>
+
+		<p>
+			The primary goal of this lab is help you understand the course goals.
+		</p>
+
+		<p>
+			The exercises in this course session will help you complete a "Grocery List" application. All of the Activities, the entire UI, and the data-management
+			classes will be provided for you. Your task will be to implement the Activity-to-Activity navigation. In a few cases, you will need to
+			pass arguments and harvest results.
+		</p>
+
+		<p>
+			The architecture of the app is shown below. Each screenshot is a separate Activity. The red arrows indicate the Activity-to-Activity
+			navigation that you will code. Note that the "Browser" Activity is from the standard Android installation and is not packaged with your app.
+		</p>
+		<img src="./res/images/Architecture.png" />
+
+		<p>
+			There is no code to write in this first exercise. This is just to give you an overview of the design of the GroceryList App.
+		</p>
+        
+        <h2>Open and Browse through the Solution File</h2>
+        <p>Open Xamarin Studio and open the <strong>GroceryList.sln</strong> file through the "File > Open.. " menu option</p>
+        <p>
+        Open the various AXML layout files in the <code>Resources\Layout</code> folder and observe how they are structured. You can use a similar approach in your own MVP implementation.
+        </p>
+        <p>
+        Open the various Activity class files in the <code>Root</code> folder and observe the C# code.</p>
+        <p> Notice the way the <code>Item.cs</code> class is setup. There are two properties. The constructor takes two arguments/parameters in this case. The code also overrides the default <code>ToString()</code> method.
+        </p>
+        
+        <p> In the MainActivity.cs, observe the way the List of Items implementation is declared and used. You will want to use a similar pattern in your App:<br/> <code>public static List<Item> Items = new List<Item>();</code></p>
+        
+        <p> Notice how new items are added to the list:<br/> <code>Items.Add(new Item("Milk",     2));</code></p>
+        <p> In the <code>DetailsActivity.cs</code> file, notice how the Items list property in the MainActivity class is used: <br/> <code>var item = MainActivity.Items[position];</code></p>
+		<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+		<h1>Summary</h1>
+		<p>
+			The Grocery List app demonstrates all the common Activity interaction patterns: one Activity starting another, passing arguments, harvesting results,
+			and launching a system Activity.
+		</p>
+
+		<div class="align-right">
+			<a href="../Start%20Here.html">Go Back</a>
+		</div>
+
+	</section>
+
+	<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+	<footer></footer>
+
+</body>
+</html>
