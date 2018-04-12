@@ -1,0 +1,4 @@
+Lab15.MainActivity, Lab15;md58e642c37ab226f9ff61115e69a0900f7.MainActivity
+Lab15.MainActivity, Lab15, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58e642c37ab226f9ff61115e69a0900f7.MainActivity
+Lab15.MainActivity;md58e642c37ab226f9ff61115e69a0900f7.MainActivity
+lab15.MainActivity;md58e642c37ab226f9ff61115e69a0900f7.MainActivity
